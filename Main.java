@@ -25,7 +25,7 @@ public class Main {
     static double chegada0 = 2;
     static double chegada1 = 5;
 
-    static int tamServ = 1;
+    static int tamServ = 2;
     static double atendimento0 = 3;
     static double atendimento1 = 5;
 
@@ -96,11 +96,10 @@ public class Main {
                 // tempo = evento.tempo;
 
                 feitos.add(evento);
-                System.out.println(evento);
-
-                System.out.println();
+                //System.out.println(evento);
             }
         }
+        System.out.println(feitos.get(feitos.size()-1));
         System.out.println("perdas = " + perdas);
     }
 
