@@ -6,6 +6,7 @@ public class Evento {
     double [] temposX;
     int tamX;
     int fila;
+    String name;
 
     public Evento(double tempo,String tipo, int tamX) {
         if (tamX == -1) {
@@ -19,6 +20,23 @@ public class Evento {
         }
     }
 
+    public Evento(int tamX) {
+        temposX = new double[tamX+1];
+    }
+
+    public Evento(double tempo,String tipo, int tamX, String name) {
+        if (tamX == -1) {
+            tamX = 1000;
+        }
+        this.tempo = tempo;
+        this.tipo = tipo;
+        temposX = new double[tamX+1];
+        for (int i = 0; i < temposX.length; i++) {
+            temposX[i] = 0;
+        }
+        this.name = name;
+    }
+
     public void setTempoX(int pos, double valor){
         temposX[pos] = valor;
     }
@@ -29,6 +47,6 @@ public class Evento {
 
     @Override
     public String toString() {
-        return "\nEvento [tipo=" + tipo + "fila = " + fila + ", tempo = " + tempo + ", temposX=" + Arrays.toString(temposX) + "]";
+        return "\nEvento [tipo=" + tipo + ", fila = " + fila + ", tempo = " + tempo + ", temposX=" + Arrays.toString(temposX) + "]";
     }
 }

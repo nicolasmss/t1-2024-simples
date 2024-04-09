@@ -2,30 +2,24 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class Parte1Simples {
     /*
      * G/G/1/5, chegadas entre 2...5, atendimento entre 3...5
-     * G/G/2/5, chegadas entre 2...5, atendimento entre 3...5
+     * G/G/2/5, chegadas entre 2...5, atendimento entre 3…5
+     * 
      * Para ambas simulações, considere inicialmente a fila vazia e o primeiro
-     * cliente chega no tempo 2,0.
-     * Realize a simulação com 100.000 aleatórios, ou seja, ao se utilizar o 100.000
-     * aleatório, sua simulação
-     * deve se encerrar e a distribuição de probabilidades, bem como os tempos
-     * acumulados para os estados da fila
-     * devem ser reportados. Além disso, indique o número de perda de clientes (caso
-     * tenha havido perda) e o tempo
-     * global da simulação.
+     * cliente chega no tempo 2,0. Realize a simulação com 100.000 aleatórios, ou
+     * seja, ao se utilizar o 100.000 aleatório, sua simulação deve se encerrar e a
+     * distribuição de probabilidades, bem como os tempos acumulados para os estados
+     * da fila devem ser reportados. Além disso, indique o número de perda de
+     * clientes (caso tenha havido perda) e o tempo global da simulação.
      */
 
-    // G/G/1/3 | 1..2 | 3..6 | inicial = 2.0
-
-    static double inicial = 2;
-
+    static double inicial = 2.0;
     static int tamFila = 5;
     static double chegada0 = 2;
     static double chegada1 = 5;
-
-    static int tamServ = 2;
+    static int tamServ = 1;
     static double atendimento0 = 3;
     static double atendimento1 = 5;
 
@@ -33,8 +27,8 @@ public class Main {
         double tempo = 0;
         int perdas = 0;
         CongruenteLinearA1 cl = new CongruenteLinearA1(12, 123, 456, 1597531591);
-        //List<Double> aleatorios = cl.preDef();
-        List<Double> aleatorios = cl.gerarX(100000);
+        // List<Double> aleatorios = cl.preDef();
+        List<Double> aleatorios = cl.gerarX(15);
 
         List<Evento> feitos = new ArrayList<>();
         List<Evento> escalonador = new ArrayList<>();
@@ -96,10 +90,10 @@ public class Main {
                 // tempo = evento.tempo;
 
                 feitos.add(evento);
-                //System.out.println(evento);
+                // System.out.println(evento);
             }
         }
-        System.out.println(feitos.get(feitos.size()-1));
+        System.out.println(feitos.get(feitos.size() - 1));
         System.out.println("perdas = " + perdas);
     }
 
