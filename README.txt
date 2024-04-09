@@ -1,6 +1,8 @@
-txt apenas para informação valores alterados aqui não mudarão nada
+//txt apenas para informação valores alterados aqui não mudarão nada
 
-para fazer uma fila simples usar Parte1Simples altera os valores abaixo no arquivo:
+//Para fazer uma fila simples usar Parte1Simples altera os valores abaixo no arquivo:
+//EXEMPLO USADO: G/G/1/5, chegadas entre 2...5, atendimento entre 3...5, com chegada em 2.0
+
     static double inicial = 2.0;
     static int tamFila = 5;
     static double chegada0 = 2;
@@ -9,7 +11,15 @@ para fazer uma fila simples usar Parte1Simples altera os valores abaixo no arqui
     static double atendimento0 = 3;
     static double atendimento1 = 5;
 
-para fazer uma fila em tandem usar Parte2Tandem e alterar os valores abaixo no arquivo:
+//Para fazer uma fila em tandem usar Parte2Tandem e alterar os valores abaixo no arquivo:
+//Name e saida da fial deve indicar; name qual fila ela é, e saida qual fila é o final dela, se estiver saida = "saida",
+//então é a saida final e o cliente saira da fila
+
+//EXEMPLO USADO: Fila 1 - G/G/2/3, chegadas entre 1..4, atendimento entre 3..4
+//               Fila 2 - G/G/1/5, atendimento entre 2..3
+//               chegada em 1.5
+
+
     static double inicial = 1.5;
     static double chegada0 = 1;
     static double chegada1 = 4;
