@@ -1,3 +1,5 @@
+package oloco;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,6 +10,7 @@ public class CongruenteLinearA1 {
     private long x0;
     private long a;
     private long c;
+
     private long m;
 
     public CongruenteLinearA1(long x0, long a, long c, long m) {

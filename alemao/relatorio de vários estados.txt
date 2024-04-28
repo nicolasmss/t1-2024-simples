@@ -1,0 +1,462 @@
+escalonador
+Tempo: 3.000149037428331        fila1->fila3
+Tempo: 4.036663778250129        fila1->chegada
+3 (numero abaixo do escalonador representa quantidade de numeros aleatorios usados até agora)
+Tempo: 3.000149037428331
+0       2.0
+1       1.000149037428331       nome: fila1     fila: 0
+perdas: 0
+3(numero abaixo do escalonador representa quantidade de numeros aleatorios usados até agora)
+Tempo: 3.000149037428331
+0       3.000149037428331       nome: fila3     fila: 1
+perdas: 0
+
+escalonador
+Tempo: 4.036663778250129        fila1->chegada
+Tempo: 11.432008714499343       fila3->fila2
+5
+Tempo: 4.036663778250129
+0       3.036514740821798
+1       1.000149037428331       nome: fila1     fila: 1
+perdas: 0
+5
+Tempo: 3.000149037428331
+0       3.000149037428331       nome: fila3     fila: 1
+perdas: 0
+
+escalonador
+Tempo: 11.432008714499343       fila3->fila2
+Tempo: 5.0972046135893905       fila1->fila2
+Tempo: 6.929709842589272        fila1->chegada
+8
+Tempo: 5.0972046135893905
+0       3.036514740821798
+1       2.0606898727675924      nome: fila1     fila: 0
+perdas: 0
+8
+Tempo: 5.0972046135893905
+0       5.0972046135893905      nome: fila2     fila: 1
+perdas: 0
+8
+Tempo: 3.000149037428331
+0       3.000149037428331       nome: fila3     fila: 1
+perdas: 0
+
+escalonador
+Tempo: 11.432008714499343       fila3->fila2
+Tempo: 6.929709842589272        fila1->chegada
+Tempo: 10.885160965809032       fila2->saida
+10
+Tempo: 6.929709842589272
+0       4.86901996982168
+1       2.0606898727675924      nome: fila1     fila: 1
+perdas: 0
+10
+Tempo: 5.0972046135893905
+0       5.0972046135893905      nome: fila2     fila: 1
+perdas: 0
+10
+Tempo: 3.000149037428331
+0       3.000149037428331       nome: fila3     fila: 1
+perdas: 0
+
+escalonador
+Tempo: 11.432008714499343       fila3->fila2
+Tempo: 10.885160965809032       fila2->saida
+Tempo: 8.42765841993293 fila1->fila2
+Tempo: 9.42506044000979 fila1->chegada
+13
+Tempo: 8.42765841993293
+0       4.86901996982168
+1       3.5586384501112507      nome: fila1     fila: 0
+perdas: 0
+13
+Tempo: 8.42765841993293
+0       5.0972046135893905
+1       3.33045380634354        nome: fila2     fila: 2
+perdas: 0
+13
+Tempo: 3.000149037428331
+0       3.000149037428331       nome: fila3     fila: 1
+perdas: 0
+
+escalonador
+Tempo: 11.432008714499343       fila3->fila2
+Tempo: 10.885160965809032       fila2->saida
+Tempo: 9.42506044000979 fila1->chegada
+Tempo: 12.746176748375802       fila2->fila3
+15
+Tempo: 9.42506044000979
+0       5.86642198989854
+1       3.5586384501112507      nome: fila1     fila: 1
+perdas: 0
+15
+Tempo: 8.42765841993293
+0       5.0972046135893905
+1       3.33045380634354        nome: fila2     fila: 2
+perdas: 0
+15
+Tempo: 3.000149037428331
+0       3.000149037428331       nome: fila3     fila: 1
+perdas: 0
+
+escalonador
+Tempo: 11.432008714499343       fila3->fila2
+Tempo: 10.885160965809032       fila2->saida
+Tempo: 12.746176748375802       fila2->fila3
+Tempo: 11.141043587663239       fila1->fila2
+Tempo: 11.55691533363862        fila1->chegada
+18
+Tempo: 9.42506044000979
+0       5.86642198989854
+1       3.5586384501112507      nome: fila1     fila: 1
+perdas: 0
+18
+Tempo: 10.885160965809032
+0       5.0972046135893905
+1       3.33045380634354
+2       2.4575025458761015      nome: fila2     fila: 1
+perdas: 0
+18
+Tempo: 3.000149037428331
+0       3.000149037428331       nome: fila3     fila: 1
+perdas: 0
+
+escalonador
+Tempo: 11.432008714499343       fila3->fila2
+Tempo: 12.746176748375802       fila2->fila3
+Tempo: 11.141043587663239       fila1->fila2
+Tempo: 11.55691533363862        fila1->chegada
+18
+Tempo: 11.141043587663239
+0       5.86642198989854
+1       5.274621597764699       nome: fila1     fila: 0
+perdas: 0
+18
+Tempo: 11.141043587663239
+0       5.0972046135893905
+1       3.586336428197747
+2       2.4575025458761015      nome: fila2     fila: 2
+perdas: 0
+18
+Tempo: 3.000149037428331
+0       3.000149037428331       nome: fila3     fila: 1
+perdas: 0
+
+escalonador
+Tempo: 11.432008714499343       fila3->fila2
+Tempo: 12.746176748375802       fila2->fila3
+Tempo: 11.55691533363862        fila1->chegada
+Tempo: 16.8065565872118 fila2->fila1
+20
+Tempo: 11.141043587663239
+0       5.86642198989854
+1       5.274621597764699       nome: fila1     fila: 0
+perdas: 0
+20
+Tempo: 11.432008714499343
+0       5.0972046135893905
+1       3.586336428197747
+2       2.7484676727122057      nome: fila2     fila: 3
+perdas: 0
+20
+Tempo: 11.432008714499343
+0       3.000149037428331
+1       8.431859677071012       nome: fila3     fila: 0
+perdas: 0
+
+escalonador
+Tempo: 12.746176748375802       fila2->fila3
+Tempo: 11.55691533363862        fila1->chegada
+Tempo: 16.8065565872118 fila2->fila1
+20
+Tempo: 11.55691533363862
+0       6.282293735873922
+1       5.274621597764699       nome: fila1     fila: 1
+perdas: 0
+20
+Tempo: 11.432008714499343
+0       5.0972046135893905
+1       3.586336428197747
+2       2.7484676727122057      nome: fila2     fila: 3
+perdas: 0
+20
+Tempo: 11.432008714499343
+0       3.000149037428331
+1       8.431859677071012       nome: fila3     fila: 0
+perdas: 0
+
+escalonador
+Tempo: 12.746176748375802       fila2->fila3
+Tempo: 16.8065565872118 fila2->fila1
+Tempo: 12.943493270800678       fila1->fila2
+Tempo: 14.655088446385534       fila1->chegada
+23
+Tempo: 11.55691533363862
+0       6.282293735873922
+1       5.274621597764699       nome: fila1     fila: 1
+perdas: 0
+23
+Tempo: 12.746176748375802
+0       5.0972046135893905
+1       3.586336428197747
+2       2.7484676727122057
+3       1.3141680338764594      nome: fila2     fila: 2
+perdas: 0
+23
+Tempo: 12.746176748375802
+0       4.3143170713047905
+1       8.431859677071012       nome: fila3     fila: 1
+perdas: 0
+
+escalonador
+Tempo: 16.8065565872118 fila2->fila1
+Tempo: 12.943493270800678       fila1->fila2
+Tempo: 14.655088446385534       fila1->chegada
+Tempo: 17.26836382292236        fila2->fila3
+Tempo: 18.167157731655777       fila3->fila2
+27
+Tempo: 12.943493270800678
+0       6.282293735873922
+1       6.661199534926756       nome: fila1     fila: 0
+perdas: 0
+27
+Tempo: 12.943493270800678
+0       5.0972046135893905
+1       3.586336428197747
+2       2.9457841951370813
+3       1.3141680338764594      nome: fila2     fila: 3
+perdas: 0
+27
+Tempo: 12.746176748375802
+0       4.3143170713047905
+1       8.431859677071012       nome: fila3     fila: 1
+perdas: 0
+
+escalonador
+Tempo: 16.8065565872118 fila2->fila1
+Tempo: 14.655088446385534       fila1->chegada
+Tempo: 17.26836382292236        fila2->fila3
+Tempo: 18.167157731655777       fila3->fila2
+27
+Tempo: 14.655088446385534
+0       7.993888911458778
+1       6.661199534926756       nome: fila1     fila: 1
+perdas: 0
+27
+Tempo: 12.943493270800678
+0       5.0972046135893905
+1       3.586336428197747
+2       2.9457841951370813
+3       1.3141680338764594      nome: fila2     fila: 3
+perdas: 0
+27
+Tempo: 12.746176748375802
+0       4.3143170713047905
+1       8.431859677071012       nome: fila3     fila: 1
+perdas: 0
+
+escalonador
+Tempo: 16.8065565872118 fila2->fila1
+Tempo: 17.26836382292236        fila2->fila3
+Tempo: 18.167157731655777       fila3->fila2
+Tempo: 16.55725344526223        fila1->fila3
+Tempo: 18.587678740933267       fila1->chegada
+30
+Tempo: 16.55725344526223
+0       7.993888911458778
+1       8.563364533803451       nome: fila1     fila: 0
+perdas: 0
+30
+Tempo: 12.943493270800678
+0       5.0972046135893905
+1       3.586336428197747
+2       2.9457841951370813
+3       1.3141680338764594      nome: fila2     fila: 3
+perdas: 0
+30
+Tempo: 16.55725344526223
+0       4.3143170713047905
+1       12.24293637395744       nome: fila3     fila: 2
+perdas: 0
+
+escalonador
+Tempo: 16.8065565872118 fila2->fila1
+Tempo: 17.26836382292236        fila2->fila3
+Tempo: 18.167157731655777       fila3->fila2
+Tempo: 18.587678740933267       fila1->chegada
+Tempo: 22.350438454647126       fila3->saida
+32
+Tempo: 16.8065565872118
+0       8.24319205340835
+1       8.563364533803451       nome: fila1     fila: 1
+perdas: 0
+32
+Tempo: 16.8065565872118
+0       5.0972046135893905
+1       3.586336428197747
+2       2.9457841951370813
+3       5.177231350287583       nome: fila2     fila: 2
+perdas: 0
+32
+Tempo: 16.55725344526223
+0       4.3143170713047905
+1       12.24293637395744       nome: fila3     fila: 2
+perdas: 0
+
+escalonador
+Tempo: 17.26836382292236        fila2->fila3
+Tempo: 18.167157731655777       fila3->fila2
+Tempo: 18.587678740933267       fila1->chegada
+Tempo: 22.350438454647126       fila3->saida
+Tempo: 17.816192680223498       fila1->fila2
+Tempo: 23.944502861477375       fila2->fila1
+36
+Tempo: 16.8065565872118
+0       8.24319205340835
+1       8.563364533803451       nome: fila1     fila: 1
+perdas: 0
+36
+Tempo: 17.26836382292236
+0       5.0972046135893905
+1       3.586336428197747
+2       3.4075914308476403
+3       5.177231350287583       nome: fila2     fila: 1
+perdas: 0
+36
+Tempo: 17.26836382292236
+0       4.3143170713047905
+1       12.24293637395744
+2       0.7111103776601304      nome: fila3     fila: 3
+perdas: 0
+
+escalonador
+Tempo: 18.167157731655777       fila3->fila2
+Tempo: 18.587678740933267       fila1->chegada
+Tempo: 22.350438454647126       fila3->saida
+Tempo: 17.816192680223498       fila1->fila2
+Tempo: 23.944502861477375       fila2->fila1
+36
+Tempo: 17.816192680223498
+0       8.24319205340835
+1       9.573000626815148       nome: fila1     fila: 0
+perdas: 0
+36
+Tempo: 17.816192680223498
+0       5.0972046135893905
+1       4.134165285498884
+2       3.4075914308476403
+3       5.177231350287583       nome: fila2     fila: 2
+perdas: 0
+36
+Tempo: 17.26836382292236
+0       4.3143170713047905
+1       12.24293637395744
+2       0.7111103776601304      nome: fila3     fila: 3
+perdas: 0
+
+escalonador
+Tempo: 18.167157731655777       fila3->fila2
+Tempo: 18.587678740933267       fila1->chegada
+Tempo: 22.350438454647126       fila3->saida
+Tempo: 23.944502861477375       fila2->fila1
+Tempo: 23.8055176224681 fila2->fila3
+38
+Tempo: 17.816192680223498
+0       8.24319205340835
+1       9.573000626815148       nome: fila1     fila: 0
+perdas: 0
+38
+Tempo: 18.167157731655777
+0       5.0972046135893905
+1       4.134165285498884
+2       3.7585564822799196
+3       5.177231350287583       nome: fila2     fila: 3
+perdas: 0
+38
+Tempo: 18.167157731655777
+0       4.3143170713047905
+1       12.24293637395744
+2       0.7111103776601304
+3       0.8987939087334169      nome: fila3     fila: 2
+perdas: 0
+
+escalonador
+Tempo: 18.587678740933267       fila1->chegada
+Tempo: 22.350438454647126       fila3->saida
+Tempo: 23.944502861477375       fila2->fila1
+Tempo: 23.8055176224681 fila2->fila3
+Tempo: 24.41013972411642        fila3->fila2
+40
+Tempo: 18.587678740933267
+0       9.01467811411812
+1       9.573000626815148       nome: fila1     fila: 1
+perdas: 0
+40
+Tempo: 18.167157731655777
+0       5.0972046135893905
+1       4.134165285498884
+2       3.7585564822799196
+3       5.177231350287583       nome: fila2     fila: 3
+perdas: 0
+40
+Tempo: 18.167157731655777
+0       4.3143170713047905
+1       12.24293637395744
+2       0.7111103776601304
+3       0.8987939087334169      nome: fila3     fila: 2
+perdas: 0
+
+escalonador
+Tempo: 22.350438454647126       fila3->saida
+Tempo: 23.944502861477375       fila2->fila1
+Tempo: 23.8055176224681 fila2->fila3
+Tempo: 24.41013972411642        fila3->fila2
+Tempo: 20.095170529244324       fila1->fila2
+Tempo: 21.430659236334314       fila1->chegada
+43
+Tempo: 20.095170529244324
+0       9.01467811411812
+1       11.080492415126205      nome: fila1     fila: 0
+perdas: 0
+43
+Tempo: 20.095170529244324
+0       5.0972046135893905
+1       4.134165285498884
+2       3.7585564822799196
+3       7.10524414787613        nome: fila2     fila: 4
+perdas: 0
+43
+Tempo: 18.167157731655777
+0       4.3143170713047905
+1       12.24293637395744
+2       0.7111103776601304
+3       0.8987939087334169      nome: fila3     fila: 2
+perdas: 0
+
+escalonador
+Tempo: 22.350438454647126       fila3->saida
+Tempo: 23.944502861477375       fila2->fila1
+Tempo: 23.8055176224681 fila2->fila3
+Tempo: 24.41013972411642        fila3->fila2
+Tempo: 21.430659236334314       fila1->chegada
+43
+Tempo: 21.430659236334314
+0       10.35016682120811
+1       11.080492415126205      nome: fila1     fila: 1
+perdas: 0
+43
+Tempo: 20.095170529244324
+0       5.0972046135893905
+1       4.134165285498884
+2       3.7585564822799196
+3       7.10524414787613        nome: fila2     fila: 4
+perdas: 0
+43
+Tempo: 18.167157731655777
+0       4.3143170713047905
+1       12.24293637395744
+2       0.7111103776601304
+3       0.8987939087334169      nome: fila3     fila: 2
+perdas: 0
+

@@ -1,42 +1,53 @@
+package oloco;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import org.yaml.snakeyaml.Yaml;
+import java.io.InputStream;
 
-public class Parte2Tandem {
-    /*
-     * Fila 1 - G/G/2/3, chegadas entre 1..4, atendimento entre 3..4
-     * Fila 2 - G/G/1/5, atendimento entre 2..3
-     * Note que a Fila 2 não possui chegadas de clientes do exterior da rede. A Fila
-     * 2 recebe 100% dos clientes que passam pela Fila 1, ou seja, as Filas 1 e 2
-     * estão em linha (em tandem) onde os clientes chegam do exterior na Fila 1 e
-     * posteriormente vão para a Fila 2, indo embora do sistema após atendimento da
-     * Fila 2.
-     * 
-     * Para a simulação, considere inicialmente as filas vazias e o primeiro cliente
-     * chega no tempo 1,5. Realizem a simulação com 100.000 aleatórios, ou seja, ao
-     * se utilizar o 100.000 aleatório, a simulação deve se encerrar e a
-     * distribuição de probabilidades, bem como os tempos acumulados para os estados
-     * de cada fila devem ser reportados. Além disso, indique o número de perda de
-     * clientes (caso tenha havido perda) de cada fila e o tempo global da
-     * simulação.
-     */
+public class Parte3Fim {
 
-    static double inicial = 1.5;
-    static double chegada0 = 1;
-    static double chegada1 = 4;
+    static double inicial;
+    static double chegada0;
+    static double chegada1;
 
     static List<Fila> filas = new ArrayList<Fila>();
 
-    public static void popular() {
-        // filas.add(new Fila(tamFila, tamServ, atendimento0, atendimento1, name,
-        // saida)) *não alterar nome da fila1*
-        filas.add(new Fila(3, 2, 3, 4, "fila1", "fila2"));// não altere name da fila1
-        filas.add(new Fila(5, 1, 2, 3, "fila2", "saida"));// saida é a saida final
+    public static void leitura(){
+        InputStream inputStream = LeituraYAML.class.getResourceAsStream("config.yml");
+        Yaml yaml = new Yaml();
+        Map<String, Object> data = yaml.load(inputStream);
 
+        Map<String, Double> configuracoes = (Map<String, Double>) data.get("configuracoes");
+        inicial = ((Number) configuracoes.get("inicial")).doubleValue();
+        chegada0 = ((Number) configuracoes.get("chegada0")).doubleValue();
+        chegada1 = ((Number) configuracoes.get("chegada1")).doubleValue();
+
+        List<Map<String, Object>> filasAux = (List<Map<String, Object>>) data.get("filas");
+        for (Map<String, Object> fila : filasAux) {
+            String nome = (String) fila.get("nome");
+            int tamFila = ((Number) fila.get("tamFila")).intValue();
+            int tamServ = ((Number) fila.get("tamServ")).intValue();
+            double atendimento0 = ((Number) fila.get("atendimento0")).doubleValue();
+            double atendimento1 = ((Number) fila.get("atendimento1")).doubleValue();
+
+            List<Saida> s2 = new ArrayList<Saida>();
+            List<Map<String, Object>> saidas = (List<Map<String, Object>>) fila.get("saidas");
+            if (saidas != null) {
+                for (Map<String, Object> saida : saidas) {
+                    String nomeSaida = (String) saida.get("nome");
+                    double probabilidade = ((Number) saida.get("prob")).doubleValue();
+                    s2.add(new Saida(nomeSaida, probabilidade));
+                }
+            }
+            filas.add(new Fila(tamFila, tamServ, atendimento0, atendimento1, nome, s2));
+        }
     }
 
     public static void main(String[] args) {
-        popular();
+        leitura();
         double tempo = 0;
         CongruenteLinearA1 cl = new CongruenteLinearA1(12, 123, 456, 1597531591);
         List<Double> aleatorios = cl.gerarX(100000);
@@ -51,15 +62,17 @@ public class Parte2Tandem {
         fila1.feitos.get(0).fila = fila1.fila;
         tempo = inicial;
 
-        System.out.println(fila1.feitos.get(0));
 
         while (true) {
             if (aleatorios.size() < 1) {
                 break;
             }
 
-            for (int i = 0; i < filas.size(); i++) {
-                Evento ev = filas.get(i).sairEvento(aleatorios);
+            for (int i = 0; i < filas.size(); i++) { //registra saidas
+                Evento ev = filas.get(i).sairEvento2(aleatorios);
+                if (aleatorios.size() < 1) {
+                    break;
+                }
                 if (ev != null) {
                     escalonador.add(ev);
                     if (aleatorios.size() < 1) {
@@ -71,7 +84,7 @@ public class Parte2Tandem {
             if (aleatorios.size() < 1) {
                 break;
             }
-            if (chegadaLivre(escalonador)) {
+            if (chegadaLivre(escalonador)) { //registra chegadas
                 double formChegada = (chegada1 - chegada0) * aleatorios.remove(0) + chegada0
                         + tempo;
                 escalonador.add(new Evento(formChegada, "chegada", fila1.tamFila, "fila1"));
@@ -80,6 +93,13 @@ public class Parte2Tandem {
             if (aleatorios.size() < 1) {
                 break;
             }
+
+            /*
+            // print do escalonador para cada estado usando debugger
+            System.out.println("escalonador");
+            for (Evento te : escalonador) {
+                System.out.println(te.print2());
+            }//*/
 
             int menor = menorTempoPos(escalonador);
             if (menor >= 0) {
@@ -109,12 +129,12 @@ public class Parte2Tandem {
                     evento.fila = f.fila;
                     f.feitos.add(evento);
 
-                    if (f.saida.equals("saida")) {
+                    if (evento.tipo.equals("saida")) {
 
                     } else {
-                        Fila filaChegada = buscarFila(f.saida);
+                        Fila filaChegada = buscarFila(evento.tipo);
                         Evento novoEvento = new Evento(evento.tempo, filaChegada.name, filaChegada.tamFila,
-                                filaChegada.saida);
+                                evento.tipo);
 
                         if (filaChegada.fila < filaChegada.tamFila) {
                             filaChegada.fila++;
@@ -135,14 +155,17 @@ public class Parte2Tandem {
                     }
 
                 }
-
-                //System.out.println(evento);
-                // evento.fila = fila;
-                // tempo = evento.tempo;
-
-                // feitos.add(evento);
-                // System.out.println(evento);
             }
+            /* 
+            // print das filas para cada momento usando debugger
+            for (Fila f : filas) {
+                if(f.feitos.size()>0){
+                    System.out.println(100000 - aleatorios.size());
+                    System.out.println(f.feitos.get(f.feitos.size()-1).print()+ "\tnome: " + f.name +  "\tfila: " + f.fila);
+                    System.out.println("perdas: "+f.perdas);
+                }
+            }
+            System.out.println();// */
         }
 
         double maior = filas.get(0).getTempo();
@@ -165,12 +188,10 @@ public class Parte2Tandem {
         }
 
         for (Fila f : filas) {
-            System.out.println(f.feitos.get(f.feitos.size()-1));
+            System.out.println(f.feitos.get(f.feitos.size()-1).print());
             System.out.println("perdas = " + f.perdas);
         }
 
-        // System.out.println(feitos.get(feitos.size() - 1));
-        // System.out.println("perdas = " + perdas);
     }
 
     public static int menorTempoPos(List<Evento> lista) {
@@ -194,7 +215,7 @@ public class Parte2Tandem {
 
     public static boolean chegadaLivre(List<Evento> escalonador) {
         for (Evento evento : escalonador) {
-            if (evento.tipo == "chegada") {
+            if (evento.tipo.equals("chegada")) {
                 return false;
             }
         }
@@ -203,7 +224,7 @@ public class Parte2Tandem {
 
     public static Fila buscarFila(String name) {
         for (Fila fila : filas) {
-            if (fila.name == name) {
+            if (fila.name.equals(name)) {
                 return fila;
             }
         }

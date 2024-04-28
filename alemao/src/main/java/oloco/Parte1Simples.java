@@ -1,3 +1,5 @@
+package oloco;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -69,7 +71,6 @@ public class Parte1Simples {
 
             int menor = menorTempoPos(escalonador);
             if (menor >= 0) {
-                boolean seguir = true;
                 Evento evento = escalonador.remove(menor);
                 Evento ultEvento = feitos.get(feitos.size() - 1);
                 copiaTempos(ultEvento, evento);
@@ -80,7 +81,6 @@ public class Parte1Simples {
                         fila++;
                     } else {
                         perdas++;
-                        seguir = false;
                     }
                 } else {
                     serv--;

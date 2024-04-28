@@ -1,3 +1,5 @@
+package oloco;
+
 import java.util.Arrays;
 
 public class Evento {
@@ -48,5 +50,25 @@ public class Evento {
     @Override
     public String toString() {
         return "\nEvento [tipo=" + tipo + ", fila = " + fila + ", tempo = " + tempo + ", temposX=" + Arrays.toString(temposX) + "]";
+    }
+
+    public String print(){
+        String lol =  "Tempo: " + tempo;
+        for (int i = 0; i < temposX.length; i++) {
+            if (temposX[i]>0) {
+                lol += "\n" + i + "\t" + temposX[i];
+            }
+        }
+        return lol;
+    }
+
+    public String print2(){
+        String lol =  "Tempo: " + tempo + "\t" + name + "->" + tipo;
+        for (int i = 0; i < temposX.length; i++) {
+            if (temposX[i]>0) {
+                lol += "\n" + i + "\t" + temposX[i];
+            }
+        }
+        return lol;
     }
 }
