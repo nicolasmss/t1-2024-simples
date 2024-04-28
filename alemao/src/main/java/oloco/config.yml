@@ -1,11 +1,13 @@
 # Não altere o nome da fila1 
 # Use -1 para filas sem limite
 # Use o nome saida para saidas sem destino de outra fila
+#
 # Nas saidas a ordem é feita pela sequencia que foi adicionada Ex:
 # fila1.saidas: nome = fila3 e probabilidade = 0.2 , nome = fila2 e probabilidade = 0.8, neste caso 
 # a probabilidade de ir para fila3 é x, sendo 0.0 <= x <= 0.2
 # e a probabilidade de ir para fila2 é y, sendo 0.2 < y <= 1.0
 # por um desenho seria algo como: 0.0__0.2_________1.0
+# a ideia é que se o numero for 0.3 a saida sera fila2 e se for 0.15 a saida sera fila3
 
 configuracoes:
   inicial: 2.0
